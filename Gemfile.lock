@@ -3,6 +3,7 @@ PATH
   specs:
     page_tree (0.0.1)
       awesome_nested_set (~> 3.0.0)
+      friendly_id (~> 5.0.0)
       rails (~> 4.1.2)
 
 GEM
@@ -39,6 +40,8 @@ GEM
       activerecord (>= 4.0.0, < 5)
     builder (3.2.2)
     erubis (2.7.0)
+    friendly_id (5.0.4)
+      activerecord (>= 4.0.0)
     hike (1.2.3)
     i18n (0.6.11)
     json (1.8.1)
