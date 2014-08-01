@@ -2,6 +2,16 @@ module PageTree
   class Engine < ::Rails::Engine
     isolate_namespace PageTree
 
+    initializer "page_tree.reserved_slugs" do
+      [:after_initialize, :to_prepare].each do |hook|
+        config.send(hook) do |app|
+          Rails.application.reload_routes!
+          engine = Rails.application.railties.find{ |railtie| railtie.class == PageTree::Engine }
+          PageTree::Page.reserved_slugs = PageTree::RoutesRecognizer.new(engine).initial_path_segments
+        end
+      end
+    end
+
     def call(env)
       page, path_info = get_page_from_path_info(env['PATH_INFO'].split('/'))
       
