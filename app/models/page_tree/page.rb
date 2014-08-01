@@ -6,12 +6,6 @@ module PageTree
 
     friendly_id :title, use: [:slugged, :scoped], scope: :parent_id, slug_generator_class: PageTree::SlugGenerator
 
-    # def self.reserved_slugs
-    #   engine = Rails.application.railties.find{ |railtie| railtie.class == PageTree::Engine }
-
-    #   return [] if engine.nil?
-    #   PageTree::RoutesRecognizer.new(engine).initial_path_segments
-    # end
     def self.reserved_slugs
       @@reserved_slugs ||= []
     end
