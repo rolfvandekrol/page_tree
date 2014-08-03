@@ -1,9 +1,10 @@
 PageTree::Engine.routes.draw do
-  root to: 'pages#show'
+  get '/', to: 'pages#show'
   get :edit, to: 'pages#edit'
-  patch :update, to: 'pages#update'
-  put :update, to: 'pages#update'
-  delete :destroy, to: 'pages#destroy'
   get :new, to: 'pages#new'
-  post :create, to: 'pages#create'
+  
+  patch '/', to: 'pages#update'
+  put '/', to: 'pages#update'
+  delete '/', to: 'pages#destroy'
+  post '/', to: 'pages#create'
 end
