@@ -12,5 +12,9 @@ module PageTree
     def self.reserved_slugs= slugs
       @@reserved_slugs = slugs
     end
+
+    def path
+      self.self_and_ancestors.to_a.from(1).map(&:slug).join('/')
+    end
   end
 end
