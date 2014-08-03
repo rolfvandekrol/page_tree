@@ -3,7 +3,7 @@ module PageTree
     extend ActiveSupport::Concern
 
     included do
-      before_action :load_page, except: [:create]
+      before_action :load_page
     end
 
     private 
