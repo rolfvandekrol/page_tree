@@ -1,5 +1,11 @@
 module PageTree
   class Engine < ::Rails::Engine
+    def routes
+      @routes ||= PageTree::RouteSet.new
+      @routes.append(&Proc.new) if block_given?
+      @routes
+    end
+
     isolate_namespace PageTree
 
     initializer "page_tree.reserved_slugs" do
