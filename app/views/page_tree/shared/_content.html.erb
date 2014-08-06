@@ -1,7 +1,17 @@
 <div class="main-content">
-  <% flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, class: name %>
-  <% end -%>
+  <% if flash[:error] %>
+    <%= content_tag :div, :id => "flash_name", :class => "alert-box error", "data-alert" => true do %>
+      <%= flash[:error] %>
+      <a class="close">x</a>
+    <% end %>
+  <% end %>
+
+  <% if flash[:notice] %>
+    <%= content_tag :div, :id => "flash_name", :class => "alert-box success", "data-alert" => true do %>
+      <%= flash[:notice] %>
+      <a class="close">x</a>
+    <% end %>
+  <% end %>
   
   <%= yield %>
 </div>
