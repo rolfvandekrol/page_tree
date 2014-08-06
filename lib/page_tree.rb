@@ -2,6 +2,7 @@ require 'awesome_nested_set'
 require 'friendly_id'
 require 'kramdown'
 require 'foundation-rails'
+require 'foundation-icons-sass-rails'
 
 module PageTree
   autoload :RoutesRecognizer, "page_tree/routes_recognizer"

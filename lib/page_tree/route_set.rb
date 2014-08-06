@@ -26,6 +26,25 @@ module PageTree
             define_method(:page_url) do |page, options = {}|
               "http://localhost:3000#{page_path(page, options)}"
             end
+
+            define_method(:edit_page_path) do |page, options = {}|
+              page_sub_path(page, :edit, options)
+            end
+            define_method(:move_up_page_path) do |page, options = {}|
+              page_sub_path(page, :move_up, options)
+            end
+            define_method(:move_down_page_path) do |page, options = {}|
+              page_sub_path(page, :move_down, options)
+            end
+            define_method(:new_page_path) do |page, options = {}|
+              page_sub_path(page, :new, options)
+            end
+
+            define_method(:page_sub_path) do |page, sub, options = {}|
+              r = page_path(page, options)
+              next "/#{sub}" if r == '/'
+              "#{r}/#{sub}"
+            end
           end
         end
     end

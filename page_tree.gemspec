@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id', '~> 5.0.0'
   s.add_dependency 'kramdown', '~> 1.4.0'
   s.add_dependency 'foundation-rails', '~> 5.3.1.0'
+  s.add_dependency 'foundation-icons-sass-rails', '~> 3.0.0'
 
   s.add_development_dependency "sqlite3"
 end

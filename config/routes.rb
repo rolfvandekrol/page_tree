@@ -7,4 +7,6 @@ PageTree::Engine.routes.draw do
   put '/', to: 'pages#update'
   delete '/', to: 'pages#destroy'
   post '/', to: 'pages#create'
+  post :move_up, to: 'pages#move_up'
+  post :move_down, to: 'pages#move_down'
 end

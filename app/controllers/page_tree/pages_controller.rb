@@ -48,5 +48,15 @@ module PageTree
     def page_params
       params.require(:page).permit(:title, :body)
     end
+
+    def move_up
+      @page.move_left
+      redirect_to @page, notice: 'Page was successfully moved.'
+    end
+
+    def move_down
+      @page.move_right
+      redirect_to @page, notice: 'Page was successfully moved.'
+    end
   end
 end

@@ -1,0 +1,25 @@
+<ul class="side-nav">
+  <% page.self_and_siblings.each do |sibling| %>
+    <% if sibling == current_page %>
+      <li class="active">
+    <% else %>
+      <li>
+    <% end %>
+      <a href="<%= page_url(sibling) %>"><%= sibling.title %></a>
+      <% if page == sibling %>
+        <% if rest.length > 0 %>
+          <%= render partial: 'page_tree/shared/menu_sub', locals: { current_page: current_page, page: rest.first, rest: rest.from(1) } %>
+        <% else %>
+          <% children = sibling.children.to_a %>
+          <% if children.length > 0 %>
+            <ul class="side-nav">
+            <% children.each do |child| %>
+              <li><a href="<%= page_url(child) %>"><%= child.title %></a></li>
+            <% end %>
+            </ul>
+          <% end %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

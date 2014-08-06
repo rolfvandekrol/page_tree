@@ -1320,3 +1320,133 @@ $sub-nav-active-cursor: default;
 // $range-slider-handle-cursor: pointer;
 
 @import 'foundation';
+@import 'foundation-icons';
+
+.main-content {
+  margin-top: 0.875rem;
+}
+
+.row {
+  max-width: none;
+}
+
+.top-bar-section {
+  ul li {
+    & > span {
+      display: block;
+      width: 100%;
+      color: $topbar-link-color;
+      padding: 12px 0 12px 0;
+      padding-#{$default-float}: $topbar-link-padding;
+      font-family: $topbar-link-font-family;
+      font-size: $topbar-link-font-size;
+      font-weight: $topbar-link-weight;
+      text-transform: $topbar-link-text-transform;
+      background: $topbar-dropdown-bg;
+    }
+    & > a.logout {
+      color: $anchor-font-color;
+    }
+  }
+}
+
+@media #{$topbar-media-query} {
+  .top-bar-section {
+    li {
+      &:not(.has-form) {
+        span {
+          padding: 0 $topbar-link-padding;
+          line-height: $topbar-height;
+          background: $topbar-link-bg;
+        }
+      }
+    }
+  }
+}
+
+
+$sidebar-bg: scale-color($secondary-color, $lightness: 55%) !default;
+$sidebar-active-bg: scale-color($secondary-color, $lightness: 35%) !default;
+$sidebar-hover-bg: scale-color($secondary-color, $lightness: 0%) !default;
+
+$sidebar-header-padding: rem-calc(14 14 0);
+$sidebar-link-padding: rem-calc(5 14);
+$sidebar-sub-indent: rem-calc(14);
+$sidebar-font-size: rem-calc(12);
+
+.sidebar {
+  background: $sidebar-bg;
+  
+  .sidebar-header {
+    padding: $sidebar-header-padding;
+
+    h5 {
+      margin: 0;
+    }
+  }
+
+  ul.side-nav {
+    padding: $sidebar-sub-indent 0 $sidebar-sub-indent;
+    @media #{$medium-up} { 
+      padding: $sidebar-sub-indent 0 $sidebar-sub-indent*2;
+    }
+
+    li {
+      padding: 0;
+      margin: 0;
+
+      font-size: $sidebar-font-size;
+
+      a {
+        display: block;
+        padding: $sidebar-link-padding;
+
+        color: #008cba;
+
+        &:hover {
+          background: $sidebar-hover-bg;
+          color: #008cba;
+        }
+      }
+
+
+      &.active {
+        background: $sidebar-active-bg;
+
+        > a:first-child:not(.button) {
+          color: #008cba;
+          font-weight: bold;
+        }
+      }
+
+      ul.side-nav {
+        padding: 0;
+        li {
+          a {
+            padding-left: $sidebar-sub-indent*2;
+          }
+
+          ul.side-nav {
+            li {
+              a {
+                padding-left: $sidebar-sub-indent*3;
+              }
+
+              li {
+                a {
+                  padding-left: $sidebar-sub-indent*4;
+                }
+
+                li {
+                  a {
+                    padding-left: $sidebar-sub-indent*5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

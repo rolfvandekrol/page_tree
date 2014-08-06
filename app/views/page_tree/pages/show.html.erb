@@ -1,3 +1,23 @@
+<% content_for :topbar do %>
+  <ul class="right">
+    <li class="has-dropdown"><a href="#">Operations</a>
+      <ul class="dropdown">
+        <li><%= link_to '<i class="fi-page-edit"></i> Edit'.html_safe, edit_page_path(@page) %></li>
+        <% if @page.left_sibling %>
+          <li><%= link_to '<i class="fi-arrow-up"></i> Move up'.html_safe, move_up_page_path(@page), :method => :post %></li>
+        <% end %>
+        <% if @page.right_sibling %>
+          <li><%= link_to '<i class="fi-arrow-down"></i> Move down'.html_safe, move_down_page_path(@page), :method => :post %></li>
+        <% end %>
+        <li><%= link_to '<i class="fi-plus"></i> Create page'.html_safe, new_page_path(@page) %></li>
+      </ul>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render partial: 'page_tree/shared/menu', locals: {page: @page} %>
+<% end %>
 
 <h1><%= @page.title %></h1>
 

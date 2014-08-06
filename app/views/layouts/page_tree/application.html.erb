@@ -12,11 +12,45 @@
   </head>
 
   <body>
+
+    <div class="fixed">
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href='/'>Blabla</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <ul class="left">
+            <li><span>Rolf van de Krol</span></li>
+            <li><a class="logout" href="#">Logout</a></li>
+          </ul>
+
+          <% if content_for? :topbar %>
+            <%= yield :topbar %>
+          <% end %>
+        </section>
+      </nav>
+    </div>
+
     <section class="main">
       <div class="row">
-        <div class="large-12 columns">
-          <%= yield %>
-        </div>
+        <% if content_for? :sidebar %>
+          <div class="large-3 medium-4 small-12 columns">
+            <div class="sidebar">
+              <%= yield :sidebar %>
+            </div>
+          </div>
+          <div class="large-9 medium-8 small-12 columns">
+            <%= render partial: 'page_tree/shared/content' %>
+          </div>
+        <% else %>
+          <div class="large-12 columns">
+            <%= render partial: 'page_tree/shared/content' %>
+          </div>
+        <% end %>
       </div>
     </section>
     
