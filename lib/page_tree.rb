@@ -3,6 +3,7 @@ require 'friendly_id'
 require 'kramdown'
 require 'foundation-rails'
 require 'foundation-icons-sass-rails'
+require 'ace_editor'
 
 module PageTree
   autoload :RoutesRecognizer, "page_tree/routes_recognizer"
