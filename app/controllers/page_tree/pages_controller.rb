@@ -30,7 +30,7 @@ module PageTree
       
       respond_to do |format|
         if @page.save
-          format.html { redirect_to @new_page, notice: 'Job was successfully created.' }
+          format.html { redirect_to @new_page, notice: 'Page was successfully created.' }
           format.json { render json: [@page],
                                status: :created, 
                                location: [@page] }
