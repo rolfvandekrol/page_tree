@@ -4,7 +4,7 @@ module PageTree
 
     acts_as_nested_set dependent: :destroy
 
-    friendly_id :slug_candidates, use: [:slugged, :scoped], scope: :parent_id, slug_generator_class: PageTree::SlugGenerator
+    friendly_id :slug_candidates, use: [:slugged, :scoped], scope: :parent_id, slug_generator_class: PageTree::Core::SlugGenerator
     
     def slug_candidates
       [
