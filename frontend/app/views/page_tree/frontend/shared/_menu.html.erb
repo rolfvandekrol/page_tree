@@ -1,0 +1,2 @@
+<% pages = page.self_and_ancestors.to_a %>
+<%= render partial: 'page_tree/frontend/shared/menu_sub', locals: { current_page: page, page: pages.first, rest: pages.from(1) } %>

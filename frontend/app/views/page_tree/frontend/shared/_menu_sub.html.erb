@@ -8,7 +8,7 @@
       <a href="<%= page_url(sibling) %>"><%= sibling.title %></a>
       <% if page == sibling %>
         <% if rest.length > 0 %>
-          <%= render partial: 'page_tree/shared/menu_sub', locals: { current_page: current_page, page: rest.first, rest: rest.from(1) } %>
+          <%= render partial: 'page_tree/frontend/shared/menu_sub', locals: { current_page: current_page, page: rest.first, rest: rest.from(1) } %>
         <% else %>
           <% children = sibling.children.to_a %>
           <% if children.length > 0 %>
