@@ -22,7 +22,7 @@ module PageTree
         @routes
       end
 
-      initializer "page_tree.reserved_slugs" do
+      initializer "page_tree_frontend.reserved_slugs" do
         [:after_initialize, :to_prepare].each do |hook|
           config.send(hook) do |app|
             Rails.application.reload_routes!
