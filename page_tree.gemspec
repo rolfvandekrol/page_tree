@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency "page_tree_core", version
   s.add_dependency "page_tree_frontend", version
+  s.add_dependency "page_tree_markdown", version
 end
