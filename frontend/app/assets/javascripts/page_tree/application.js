@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
+//= require_module page_tree/frontend/assets/js
 
 $(function() {
   $(document).foundation();

@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'foundation-rails', '~> 5.3.1.0'
   s.add_dependency 'foundation-icons-sass-rails', '~> 3.0.0'
+  s.add_dependency 'sprockets-require_module', '~> 1.0.0'
 end
