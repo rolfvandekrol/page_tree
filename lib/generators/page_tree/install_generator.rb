@@ -7,6 +7,9 @@ module PageTree
       def install_frontend
         run 'bundle exec rails generate page_tree:frontend:install'
       end
+      def install_markdown
+        run 'bundle exec rails generate page_tree:markdown:install'
+      end
     end
   end
 end
